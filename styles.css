@@ -3,7 +3,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
-    
 }
 
 body {
@@ -12,13 +11,11 @@ body {
 }
 
 .container {
-    max-width: 2000px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 10px;
+    padding: 20px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    
-    
 }
 
 header {
@@ -33,12 +30,17 @@ header {
     max-width: 150px;
 }
 
+nav {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
 nav a {
     text-decoration: none;
-    color: #00695c;
+    color: #333;
     margin-left: 20px;
     font-size: 18px;
-    font-display: #00695c;
 }
 
 nav a:hover {
@@ -55,20 +57,26 @@ h2 {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.table-controls label {
+    margin-bottom: 10px;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
-    border: 2px solid #ddd;
+    border: 1px solid #ddd;
 }
 
 table th,
 table td {
-    padding: 10px;
+    padding: 12px;
     border: 1px solid #ddd;
     text-align: center;
+    font-size: 14px;
 }
 
 table th {
@@ -85,6 +93,7 @@ table tr:nth-child(even) {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .pagination div a {
@@ -113,5 +122,101 @@ table tr:nth-child(even) {
 .eye-icon {
     width: 24px;
     height: 24px;
-    fill: #00695c;
+    fill: #1e88e5;
+}
+
+/* Responsive Design for Mobile Screens */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    nav a {
+        margin-left: 10px;
+        font-size: 16px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .table-controls {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .table-controls label {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    table th,
+    table td {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    table,
+    table th,
+    table td {
+        white-space: nowrap;
+        overflow-x: auto;
+    }
+
+    .pagination {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .pagination div {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+
+    nav a {
+        font-size: 14px;
+        margin-left: 8px;
+    }
+
+    .table-controls {
+        align-items: stretch;
+    }
+
+    table th,
+    table td {
+        padding: 6px;
+        font-size: 10px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    .pagination div {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .icon-button {
+        padding: 3px;
+    }
+
+    .eye-icon {
+        width: 20px;
+        height: 20px;
+    }
 }
